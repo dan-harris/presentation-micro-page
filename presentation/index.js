@@ -1,15 +1,14 @@
 import React from 'react';
-import Iframe from 'react-iframe';
-import { Appear, Code, Deck, Fill, Fit, Heading, Image, Layout, Slide, Text } from 'spectacle';
+import { Appear, Deck, Fill, Fit, Heading, Image, Layout, Slide, Text } from 'spectacle';
 import preloader from 'spectacle/lib/utils/preloader';
 import { fadeInCustom } from './components/default-attrs/appear-defaults';
 import { defaultBG, highlightBG } from './components/default-attrs/slide-defaults';
 import { HeaderWithSub } from './components/header-with-sub';
 import { HeadingWithEmphasis } from './components/heading-with-emphasis';
-import { SubHeading } from './components/sub-heading'
 import { ListWithEmphasis } from './components/list';
 import { ListItemWithEmphasis } from './components/list-item';
 import { PlaceholderSlideNotes } from './components/placeholder-slide-notes';
+import { SubHeading } from './components/sub-heading';
 import { images } from './images';
 import SlideNotes01 from './slide-notes/01.md';
 import SlideNotes04 from './slide-notes/04.md';
@@ -18,7 +17,7 @@ import SlideNotes06 from './slide-notes/06.md';
 import SlideNotes07 from './slide-notes/07.md';
 import SlideNotes08 from './slide-notes/08.md';
 import { ClientServerRangeSlideContent } from './slides/07-client-server-range-slide-content';
-import { BrowserFrameFlow } from './slides/13-browser-frame-flow';
+import { MicroPageArchitectureSlideContent } from './slides/08-micro-page-architecture-slide-content';
 import './styles/globals.css';
 import './styles/prism-theme.css';
 import { createCustomTheme } from './styles/theme-custom';
@@ -121,28 +120,113 @@ export default class Presentation extends React.Component {
 
         {/* SLIDE 8 */}
         <Slide {...defaultBG} notes={SlideNotes08}>
-          {/* different architectures */}
+          <MicroPageArchitectureSlideContent />
         </Slide>
 
         {/*
          * ======================
-         * IMPLEMENTATION
+         * BENEFITS (WHY & WHATS TO GAIN)
          * ======================
          */}
 
-    
+        {/* SLIDE 9 */}
+        <Slide {...defaultBG} notes={SlideNotes01}>
+          <>
+            <HeaderWithSub>benefits</HeaderWithSub>
+            <Layout style={{ justifyContent: 'space-evenly' }}>
+              <ListWithEmphasis>
+                <ListItemWithEmphasis>
+                  <Heading size={4}>try using</Heading>
+                  <Text>&#123; opacity / transform &#125;</Text>
+                </ListItemWithEmphasis>
+                <ListItemWithEmphasis>
+                  <Heading size={4}>avoid layout</Heading>
+                  <Text>&#123; querying properties &#125;</Text>
+                </ListItemWithEmphasis>
+              </ListWithEmphasis>
+              <ListWithEmphasis>
+                <ListItemWithEmphasis>
+                  <Heading size={4}>raf</Heading>
+                  <Text>&#123; use where appropriate &#125;</Text>
+                </ListItemWithEmphasis>
+                <ListItemWithEmphasis>
+                  <Heading size={4}>Don't go overboard</Heading>
+                  <Text>&#123; there are overheads &#125;</Text>
+                </ListItemWithEmphasis>
+              </ListWithEmphasis>
+            </Layout>
+          </>
+        </Slide>
+
+        {/*
+         * ======================
+         * IMPLEMENTATION (HOW)
+         * ======================
+         */}
+
+        {/* SLIDE 10 */}
+        <Slide {...highlightBG} notes={SlideNotes06}>
+          <HeaderWithSub>implementation</HeaderWithSub>
+        </Slide>
+
+        {/* SLIDE 11 */}
+        <Slide {...defaultBG} notes={SlideNotes01}>
+            <Image src={images.razorTSArch} style={{ width: '1000px' }}/>
+        </Slide>
+
+
+        {/* SLIDE 11 */}
+        <Slide {...defaultBG} notes={SlideNotes01}>
+            <Image src={images.pizzaShop} style={{ border: '6px black solid', width: '600px' }}/>
+        </Slide>
+
+        {/*
+         * ======================
+         * TRADEOFFS (& CONS)
+         * ======================
+         */}
+
+        {/* SLIDE 12 */}
+        <Slide {...defaultBG} notes={SlideNotes01}>
+          <>
+            <HeaderWithSub>downsides</HeaderWithSub>
+            <Layout style={{ justifyContent: 'space-evenly' }}>
+              <ListWithEmphasis>
+                <ListItemWithEmphasis>
+                  <Heading size={4}>try using</Heading>
+                  <Text>&#123; opacity / transform &#125;</Text>
+                </ListItemWithEmphasis>
+                <ListItemWithEmphasis>
+                  <Heading size={4}>avoid layout</Heading>
+                  <Text>&#123; querying properties &#125;</Text>
+                </ListItemWithEmphasis>
+              </ListWithEmphasis>
+              <ListWithEmphasis>
+                <ListItemWithEmphasis>
+                  <Heading size={4}>raf</Heading>
+                  <Text>&#123; use where appropriate &#125;</Text>
+                </ListItemWithEmphasis>
+                <ListItemWithEmphasis>
+                  <Heading size={4}>Don't go overboard</Heading>
+                  <Text>&#123; there are overheads &#125;</Text>
+                </ListItemWithEmphasis>
+              </ListWithEmphasis>
+            </Layout>
+          </>
+        </Slide>
+
         {/*
          * ======================
          * THANKS & GOODBYE
          * ======================
          */}
 
-        {/* SLIDE 35 */}
+        {/* SLIDE 13 */}
         <Slide {...defaultBG} notes={PlaceholderSlideNotes}>
-          <HeaderWithSub>thoughts?</HeaderWithSub>
+          <HeaderWithSub>thoughts</HeaderWithSub>
         </Slide>
 
-        {/* SLIDE 36 */}
+        {/* SLIDE 14 */}
         <Slide {...defaultBG}>
           <ProfileLinksSlideContent />
         </Slide>
